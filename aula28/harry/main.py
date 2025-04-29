@@ -9,6 +9,10 @@ def detectar_cantos_harris(image, blockSize, ksize, k):
     img_color[harris > 0.01 * harris.max()] = [0, 0, 255]
     return img_color
 
+"""
+
+"""
+
 IMGS_DIR = os.path.join(os.path.dirname(__file__), 'imgs')
 
 img_files = sorted([

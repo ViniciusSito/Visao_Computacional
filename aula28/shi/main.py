@@ -2,6 +2,10 @@ import os
 import cv2
 import numpy as np
 
+"""
+
+"""
+
 def aplicar_shi_tomasi(imagem_gray, max_corners, quality_level, min_distance):
     cantos = cv2.goodFeaturesToTrack(
         imagem_gray,
@@ -14,16 +18,18 @@ def aplicar_shi_tomasi(imagem_gray, max_corners, quality_level, min_distance):
     if cantos is not None:
         for c in np.int32(cantos):
             x, y = c.ravel()
-            # desenha círculo branco no grayscale
             cv2.circle(img_out, (x, y), 3, 255, -1)
     return img_out
 
+
 IMGS_DIR = os.path.join(os.path.dirname(__file__), 'imgs')
+
 
 img_files = sorted([
     f for f in os.listdir(IMGS_DIR)
     if f.lower().endswith(('.jpg', '.jpeg', '.png'))
 ])
+
 
 imagens = []
 for fname in img_files:
