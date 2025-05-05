@@ -16,7 +16,7 @@ escala = 1.0
 
 for fname in img_files:
     path = os.path.join(IMGS_DIR, fname)
-    img = cv2.imread(path, cv2.IMREAD_GRAYSCALE)
+    img = cv2.imread(path, cv2.IMREAD_ANYCOLOR)  
 
     h, w = img.shape[:2]
     centro = (w // 2, h // 2)

@@ -16,7 +16,7 @@ img_files = sorted([
 
 for fname in img_files:
     path = os.path.join(IMGS_DIR, fname)
-    img = cv2.imread(path, cv2.IMREAD_GRAYSCALE)  
+    img = cv2.imread(path, cv2.IMREAD_ANYCOLOR)  
     if img is None:
         print(f"Falha ao carregar {fname}, pulando…")
         continue
