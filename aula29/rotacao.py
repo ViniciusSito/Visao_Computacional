@@ -11,19 +11,17 @@ img_files = sorted([
        and f.lower().endswith(('.jpg', '.jpeg', '.png'))
 ])
 
-angulo = 90
+angulo = 45
+escala = 1.0
 
 for fname in img_files:
     path = os.path.join(IMGS_DIR, fname)
     img = cv2.imread(path, cv2.IMREAD_GRAYSCALE)
-    if img is None:
-        print(f"Falha ao carregar {fname}, pulando…")
-        continue
 
     h, w = img.shape[:2]
     centro = (w // 2, h // 2)
 
-    M = cv2.getRotationMatrix2D(centro, angulo, 1.0)
+    M = cv2.getRotationMatrix2D(centro, angulo, escala)
 
     rotated = cv2.warpAffine(img, M, (w, h))
 
