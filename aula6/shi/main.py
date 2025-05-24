@@ -2,9 +2,6 @@ import os
 import cv2
 import numpy as np
 
-"""
-
-"""
 
 def aplicar_shi_tomasi(imagem_gray, max_corners, quality_level, min_distance):
     cantos = cv2.goodFeaturesToTrack(
